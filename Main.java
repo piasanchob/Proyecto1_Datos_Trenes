@@ -4,14 +4,27 @@
  * and open the template in the editor.
  */
 package com.mycompany.tienda;
+import java.util.List;
+import java.util.ArrayList;
 
-/**
- *
- * @author Andrey Sancho
- */
+
+//Aquí pretendo importar el archivo items.java
+
 public class Main {
     public static void main(String[] args){
         System.out.println("welcome to the shop");
+        int listaitemsatq[] = new int [5];
+        int stats = 0;
+        for(int i = 0;i<4;i++){
+            listaitemsatq[i] = stats;
+            stats = stats + 10;
+            
+            
+            
+        }
+        System.out.println(listaitemsatq);
+        
+        
         
     }
     
