@@ -5,6 +5,8 @@
  */
 package com.mycompany.tienda;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Andrey Sancho
@@ -24,18 +26,20 @@ public class player {
         this.statsalud = statsalud;
         this.statspeed = statspeed;
     }
-    public void comprar(item precioproducto,item atq,item def,item speed,item luck,item salud){
-       dinero = dinero - precioproducto.precio;
-       statataque = statataque + atq.statataque;
-       statdefensa = statdefensa + def.statdefensa;
-       statspeed = statspeed + speed.statspeed;
-       statluck = statluck + luck.statluck;
-       statsalud = statsalud + salud.statsalud;
+    public void comprar(item item){
+       dinero = dinero - item.precio;
+       statataque = statataque + item.statataque;
+       statdefensa = statdefensa + item.statdefensa;
+       statspeed = statspeed + item.statspeed;
+       statluck = statluck + item.statluck;
+       statsalud = statsalud + item.statsalud;
        //PreguntarObando
        
     }
     public void vender(inventory precioprodu){
         dinero = dinero + precioprodu.precio;
+        
+        
         //Eliminar item del inventario preguntar Obando
         
     }
