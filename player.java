@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Andrey Sancho
+ * 
  */
 public class player {
     int dinero;
@@ -18,6 +18,9 @@ public class player {
     int statspeed;
     int statluck;
     int statsalud;
+    inventory inventario;
+    ArrayList <item> listaitems;
+    item equipado;
     public player(int dinero,int statataque, int statdefensa, int statspeed, int statluck,int statsalud){
         this.dinero  = dinero;
         this.statataque = statataque;
@@ -25,22 +28,51 @@ public class player {
         this.statluck = statluck;
         this.statsalud = statsalud;
         this.statspeed = statspeed;
+        this.listaitems = new ArrayList <item>();
+        this.equipado = null;
     }
     public void comprar(item item){
        dinero = dinero - item.precio;
+       listaitems.add(item);
+       
+    }
+    public void vender(int index){
+        //this.vender(item);Shop.listainventario.remove(item);
+        item item = listaitems.remove(index);
+        dinero = dinero + item.precio;
+    
+        
+        
+        
+        
+        
+    }
+    public void equipar(int index){
+       if (equipado != null){
+           listaitems.add(equipado);
+           statataque = statataque - equipado.statataque;
+           statdefensa = statdefensa - equipado.statdefensa;
+           statspeed = statspeed - equipado.statspeed;
+           statluck = statluck - equipado.statluck;
+           statsalud = statsalud - equipado.statsalud;    
+       }
+       item item = listaitems.remove(index);
+       
+       equipado = item;
+       
        statataque = statataque + item.statataque;
        statdefensa = statdefensa + item.statdefensa;
        statspeed = statspeed + item.statspeed;
        statluck = statluck + item.statluck;
        statsalud = statsalud + item.statsalud;
-       //PreguntarObando
        
+       
+        
     }
-    public void vender(inventory precioprodu){
-        dinero = dinero + precioprodu.precio;
-        
-        
-        //Eliminar item del inventario preguntar Obando
+    public void desequipar(){
+       
+       equipado = null;
+       
         
     }
     public void imprimir(){

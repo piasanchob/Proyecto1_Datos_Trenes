@@ -23,9 +23,7 @@ public class shop {
         listainventario.add(in);
     }
     item comprar(int index){
-        //item comprado = listaitems.get(index);
-        //listainventario.add();
-        return listaitems.remove(index);
+         return listaitems.remove(index);
         
     }
     inventory vender(int index){

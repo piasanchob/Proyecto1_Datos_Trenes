@@ -15,9 +15,19 @@ import java.util.ArrayList;
 public class inventory {
     String nombre;
     int precio;
-    public inventory(String nombre,int precio){
+    int statataque;
+    int statdefensa;
+    int statluck;
+    int statspeed;
+    int statsalud;
+    public inventory(String nombre,int precio,int statataque,int statdefensa,int statluck, int statspeed, int statsalud){
         this.nombre = nombre;
         this.precio = precio;
+        this.statataque = statataque;
+        this.statdefensa = statdefensa;
+        this.statluck = statluck;
+        this.statsalud = statsalud;
+        this.statspeed = statspeed;
     }
     public void imprimirinventario(){
         System.out.println("Item: " + nombre);
